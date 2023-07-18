@@ -6,13 +6,15 @@ include 'data/data.php';
 $filteredHotels = $hotels;
 
 // Applica i filtri se sono stati inviati tramite il form
+
+// Filtro per parcheggio Hotel 
 if (isset($_GET['parking']) && $_GET['parking'] !== '') {
     $parkingFilter = $_GET['parking'] === '1';
     $filteredHotels = array_filter($filteredHotels, function ($hotel) use ($parkingFilter) {
         return $hotel['parking'] === $parkingFilter;
     });
 }
-
+// Filtro voto Hotel 
 if (isset($_GET['vote']) && $_GET['vote'] !== '') {
     $voteFilter = (int)$_GET['vote'];
     $filteredHotels = array_filter($filteredHotels, function ($hotel) use ($voteFilter) {
