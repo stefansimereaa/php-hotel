@@ -59,11 +59,11 @@ if (isset($_GET['vote']) && $_GET['vote'] !== '') {
             <tbody>
                 <?php foreach ($hotels as $hotel) : ?>
                     <tr>
-                        <td><?php echo $hotel['name']; ?></td>
-                        <td><?php echo $hotel['description']; ?></td>
-                        <td><?php echo $hotel['parking'] ? 'Sì' : 'No'; ?></td>
-                        <td><?php echo $hotel['vote']; ?></td>
-                        <td><?php echo $hotel['distance_to_center']; ?> km</td>
+                        <td><?= $hotel['name']; ?></td>
+                        <td><?= $hotel['description']; ?></td>
+                        <td><?= $hotel['parking'] ? 'Sì' : 'No'; ?></td>
+                        <td><?= $hotel['vote']; ?></td>
+                        <td><?= $hotel['distance_to_center']; ?> km</td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -86,7 +86,7 @@ if (isset($_GET['vote']) && $_GET['vote'] !== '') {
                     </select>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="vote">Filtra per voto (>=):</label>
+                    <label for="vote">Filtra per voto maggiore o uguale:</label>
                     <input type="number" name="vote" id="vote" min="1" max="5" step="1" class="form-control">
                 </div>
                 <div class="col-md-4 mb-3">
@@ -118,7 +118,6 @@ if (isset($_GET['vote']) && $_GET['vote'] !== '') {
                 <?php endforeach; ?>
             </tbody>
         </table>
-
     </div>
 </body>
 
