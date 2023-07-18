@@ -2,7 +2,7 @@
 // Added Data file
 include 'data/data.php';
 
-// Filtri iniziali (nessun filtro)
+// Filtri iniziali
 $filteredHotels = $hotels;
 
 // Applica i filtri se sono stati inviati tramite il form
